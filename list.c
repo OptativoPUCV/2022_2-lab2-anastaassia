@@ -112,7 +112,7 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
   Node *current  = list->current;
-  void *dato = current-> data;
+  void *data = current-> data;
   if(current == NULL)
     return NULL;
   
