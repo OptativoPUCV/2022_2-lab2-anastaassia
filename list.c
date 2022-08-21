@@ -127,10 +127,9 @@ void * popCurrent(List * list) {
   }else{
     current->prev->next = list->current->prev;
     current->next->prev = list->current->next;
-    
   }
-  
-    return NULL;
+  free(current);
+  return dato;
 }
 
 void cleanList(List * list) {
