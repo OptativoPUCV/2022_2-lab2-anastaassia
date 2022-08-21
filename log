@@ -142,3 +142,16 @@ list.c:70:29: error: expected ‘;’ before ‘}’ token
       | ~                            
 Compilation failed
 a692f0d
+Sun 21 Aug 2022 06:05:45 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘prevList’:
+list.c:70:29: error: expected ‘;’ before ‘}’ token
+   70 |   return list->current->data
+      |                             ^
+      |                             ;
+   71 | }
+      | ~                            
+Compilation failed
+36d2e83
