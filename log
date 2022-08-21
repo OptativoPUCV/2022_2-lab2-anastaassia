@@ -26,3 +26,11 @@ list.c:34:7: error: ‘List’ {aka ‘struct List’} has no member named ‘si
       |       ^~
 Compilation failed
 9dcdee6
+Sun 21 Aug 2022 04:49:16 PM UTC: 
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:34:7: error: ‘List’ {aka ‘struct List’} has no member named ‘size’
+   34 |   list->size = NULL;
+      |       ^~
+Compilation failed
+f7af417
