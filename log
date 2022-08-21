@@ -206,3 +206,16 @@ Sun 21 Aug 2022 06:57:59 PM UTC:
  tests:  10|2
 total_score: 45/70
 6b020fb
+Sun 21 Aug 2022 07:27:13 PM UTC: 
+ list.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘pushCurrent’:
+list.c:95:25: error: expected ‘;’ before ‘}’ token
+   95 |     list->tail = newNode
+      |                         ^
+      |                         ;
+   96 |   }else{
+      |   ~                      
+Compilation failed
+05bf7e5
