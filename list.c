@@ -29,10 +29,10 @@ Node * createNode(void * data) {
 }
 
 List * createList() {
-  List* list = (List* )malloc(sizeof(List));//
-  list->head = NULL;
-  list->tail = NULL;
-  list->current = NULL;
+  List* list = (List* )malloc(sizeof(List));//se reserva memoria 
+  list->head = NULL;//se inicializa la cabezera con NULL
+  list->tail = NULL;//se inicialoza la cola con NULL
+  list->current = NULL;//se inicializa el dato actual con NULL
      return list;
 }
 
@@ -41,8 +41,8 @@ void * firstList(List * list) {
     return NULL;
   if(list->current->next == NULL)
     return NULL;
-  list->current = list->head;
-    return list->head->data;
+  list->current = list->head;//se le asigna el valor a la cabezera 
+    return list->head->data;//retorna una lista con un dato cabezera
 }
 
 void * nextList(List * list) {
@@ -50,8 +50,8 @@ void * nextList(List * list) {
     return NULL;
   if(list->current->next == NULL)
     return NULL;
-  list->current = list->current->next;
-  return list->current->data;
+  list->current = list->current->next;//se le asigna un valor al dato siguiente
+  return list->current->data;//retorna una lista con un valor asiganado 
 }
 
 void * lastList(List * list) {
