@@ -125,8 +125,8 @@ void * popCurrent(List * list) {
     list->tail = current->prev;
     
   }else{
-    current->prev->next = list->current->prev;
-    current->next->prev = list->current->next;
+    current->prev->next = list->current->next;
+    current->next->prev = list->current->prev;
   }
   free(current);
   return dato;
