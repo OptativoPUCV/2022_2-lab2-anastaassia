@@ -167,3 +167,19 @@ Sun 21 Aug 2022 06:11:00 PM UTC:
  tests:  9|3
 total_score: 35/70
 85c3add
+Sun 21 Aug 2022 06:28:23 PM UTC: 
+ list.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:74:20: error: implicit declaration of function ‘Create_Node’; did you mean ‘createNode’? [-Werror=implicit-function-declaration]
+   74 |   Node *New_Node = Create_Node(data);
+      |                    ^~~~~~~~~~~
+      |                    createNode
+list.c:74:20: error: initialization of ‘Node *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+list.c:74:9: error: unused variable ‘New_Node’ [-Werror=unused-variable]
+   74 |   Node *New_Node = Create_Node(data);
+      |         ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3ae4f7f
