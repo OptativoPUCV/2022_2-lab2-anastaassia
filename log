@@ -194,3 +194,9 @@ list.c:74:9: error: unused variable ‘New_Node’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 8077db5
+Sun 21 Aug 2022 06:54:38 PM UTC: 
+ list.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+ tests:  9|3
+total_score: 35/70
+0116d71
