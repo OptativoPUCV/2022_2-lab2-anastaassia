@@ -112,3 +112,20 @@ list.c:70:1: error: control reaches end of non-void function [-Werror=return-typ
 cc1: all warnings being treated as errors
 Compilation failed
 1243167
+Sun 21 Aug 2022 06:00:55 PM UTC: 
+ list.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘prevList’:
+list.c:69:24: error: ‘List’ {aka ‘struct List’} has no member named ‘prev’
+   69 |   list->current =  list->prev;
+      |                        ^~
+list.c:70:29: error: expected ‘;’ before ‘}’ token
+   70 |   return list->current->data
+      |                             ^
+      |                             ;
+   71 | 
+   72 | }
+      | ~                            
+Compilation failed
+abb87d9
