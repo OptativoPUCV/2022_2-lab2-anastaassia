@@ -183,3 +183,14 @@ list.c:74:9: error: unused variable ‘New_Node’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 3ae4f7f
+Sun 21 Aug 2022 06:29:45 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:74:9: error: unused variable ‘New_Node’ [-Werror=unused-variable]
+   74 |   Node *New_Node = createNode(data);
+      |         ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+8077db5
