@@ -236,3 +236,14 @@ list.c:115:9: error: unused variable ‘dato’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 8a9d2f1
+Sun 21 Aug 2022 09:00:41 PM UTC: 
+ list.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:115:9: error: unused variable ‘dato’ [-Werror=unused-variable]
+  115 |   void *dato = current-> data;
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+25d8eae
