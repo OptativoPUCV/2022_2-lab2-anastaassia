@@ -42,7 +42,7 @@ void * firstList(List * list) {
   if(list->current->next == NULL)
     return NULL;
   list->current = list->head;//se le asigna el valor a la cabezera 
-    return list->head->data;//retorna una lista con un dato cabezera
+    return list->head->data;//retorna el dato del primer nodo cabezera
 }
 
 void * nextList(List * list) {
@@ -50,15 +50,15 @@ void * nextList(List * list) {
     return NULL;
   if(list->current->next == NULL)
     return NULL;
-  list->current = list->current->next;//se le asigna un valor al dato siguiente
-  return list->current->data;//retorna una lista con un valor asiganado 
+  list->current = list->current->next;//se le asigna un valor al dato siguiente del current
+  return list->current->data;//retorna el dato siguiente del current
 }
 
 void * lastList(List * list) {
   if(list->tail == NULL)
     return NULL;
-  list->current = list->tail;
-  return list->tail->data;
+  list->current = list->tail;//asigna al current al final de lista 
+  return list->tail->data;//retorna el dato del final de la lista
 }
 
 void * prevList(List * list) {
@@ -66,47 +66,47 @@ void * prevList(List * list) {
     return NULL;
   if(list->current->prev == NULL)
     return NULL;
-  list->current = list->current->prev;
-  return list->current->data;
+  list->current = list->current->prev;//asigna el current al nodo anterior del mismo 
+  return list->current->data;//retorna el dato el current
 }
 
 void pushFront(List * list, void * data) {
   Node *newNode = createNode(data);
   if(list->head != NULL){
-    list->head->prev = newNode;
-    newNode->next = list->head; 
-    list->head = newNode;
+    list->head->prev = newNode;//el anterior al head se convierte en el nuevo nodo 
+    newNode->next = list->head;// el next del nuevo nodo pasa ser el head 
+    list->head = newNode;//actualiza el head al nuevo nodo
   }else{
-    list->head = newNode;
-    list->tail = newNode;
+    list->head = newNode;//asigan el head al nuevo nodo
+    list->tail = newNode;//asigna el tail al nuevo nodo 
   }
 }
 
 void pushBack(List * list, void * data) {
-    list->current = list->tail;
-    pushCurrent(list,data);
+    list->current = list->tail;//asigna el current al tail
+    pushCurrent(list,data);//llama a funcion 
 }
 
 void pushCurrent(List * list, void * data) {
   Node *newNode = createNode(data);
   if(list->current == list->tail){
-    newNode->prev = list->current;
-    list->current->next = newNode;
-    list->tail = newNode;
+    newNode->prev = list->current;//el anterior del nuevo nodo es igual al current
+    list->current->next = newNode;//el siguiente del current es igual al nuevo nodo
+    list->tail = newNode;//el tail es igual al nuevo nodo
   }else{
-    newNode->prev = list->current;
-    newNode->next = list->current->next;
-    list->current->next = newNode;
+    newNode->prev = list->current;//el anterior del nuevo nodo es igual al current
+    newNode->next = list->current->next;//el siguente del nuevo nodo es igual al siguiente del currente
+    list->current->next = newNode;//el siguente del current es igual al nuevo nodo
   }
 }
 
 void * popFront(List * list) {
-    list->current = list->head;
+    list->current = list->head;//actualiza el currrent al head
     return popCurrent(list);
 }
 
 void * popBack(List * list) {
-    list->current = list->tail;
+    list->current = list->tail;//actualiza el current al tail
     return popCurrent(list);
 }
 
@@ -117,19 +117,19 @@ void * popCurrent(List * list) {
     return NULL;
   
   if(list->head == current){
-    current->next->prev = NULL;
-    list->head = current->next;
+    current->next->prev = NULL;//el previo del siguente del current se trasforma a null
+    list->head = current->next;//el head se trasforma al siguiente del current
     
   }else if(list->tail == current){
-    current->prev->next = NULL;
-    list->tail = current->prev;
+    current->prev->next = NULL;//el siguente del previo del current se trasforma a null
+    list->tail = current->prev;//el tail se trasforma al previo del current
     
   }else{
-    current->prev->next = list->current->next;
-    current->next->prev = list->current->prev;
+    current->prev->next = list->current->next;//actualiza el siguiente del previo del current al siguente del current
+    current->next->prev = list->current->prev;//actualiza el previo del siguiente del current al previo del current
   }
-  free(current);
-  return dato;
+  free(current);//se libera la memoria del current
+  return dato;//retorna el dato
 }
 
 void cleanList(List * list) {
